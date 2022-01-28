@@ -30,8 +30,16 @@
     const para = document.createElement('p');
 
     // Add your code here
-    function chooseName() {
-        const randomName = names[Math.floor(Math.random()*names.length)] // get random name from array
+    function random(min, max) { //function to return a random number between two values
+        randNum = Math.floor(Math.random()*((max - min)) + min);
+        return randNum;
+    }
+
+    function chooseName(array) {
+        const length = array.length; //set max for random function
+        const index = random(0, length); //get random array index
+        randomName = names[index];
+        //const randomName = names[Math.floor(Math.random()*names.length)] // get random name from array
         para.textContent = randomName; //return random name
     }
     // Don't edit the code below here!
