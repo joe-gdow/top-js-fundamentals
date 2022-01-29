@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<head>
+    <title>Javascript.info Function Basics</title>
+    <style>
+        body {
+            background-color: lightgrey;
+        }
+        h1 {
+            padding-top: 20px;
+        }
+        input {
+            border: 2px solid black;
+        }
+        button {
+            border-radius: 10px;
+            color: grey;
+            font-weight: 700;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="min">
+    <h1>Function min(a, b)</h1>
+    <p>Returns the lower of two numbers: </p>
+    <input class="minInput" type="text" placeholder="please enter two numbers"></input> 
+    <button class="minSubmit">Submit</button>
+    <p class="minResult"></p></div>
+
+    <div class="pow">
+        <h1>Function pow(a, b)</h1>
+        <p>Returns the first number to the power of the second: </p>
+        <input class="powInput" type="text" placeholder="please enter two numbers"></input> 
+        <button class="powSubmit">Submit</button>
+        <p class="powResult"></p></div>
+
+</body>
+<script>
+    //declare variables to handle HTML elements
+    const minInput = document.querySelector('.minInput');
+    const minPara = document.querySelector('.minResult');
+    const minButton = document.querySelector('.minSubmit');
+
+    const powInput = document.querySelector('.powInput');
+    const powPara = document.querySelector('.powResult');
+    const powButton = document.querySelector('.powSubmit');
+
+
+    //event listener for min function button click
+    minButton.addEventListener('click', () => {
+        input = minInput.value;
+        a = input[0];
+        b = input[2];
+        minPara.textContent = min(a, b);
+    });
+    //event listener for pow function button click
+    powButton.addEventListener('click', () => {
+        input = powInput.value;
+        a = input[0];
+        b = input[2];
+        powPara.textContent = pow(a, b);
+    });
+
+    function min(a, b) {
+        //Add error handling:
+        if (isNaN(a) || isNaN(b)) {
+            return "Please enter numbers!"
+        }
+        if (a == b) {
+            return "They're equal!";
+        }
+        else if (a < b) {
+            return `${a} is less than ${b}`;
+        }
+        else {
+            return `${a} is greater than ${b}`;
+        }
+    }
+
+    function pow(a, b) {
+        let x = a;
+        let y = b;
+        //error handler:
+        if (isNaN(a) || isNaN(b)) {
+            return "Please enter numbers!"
+        }
+        while (y > 1) {
+            x = x * a;
+            y = y - 1;
+        }
+        return `${a} to the power of ${b} is ${x}`;
+    }
+</script>
