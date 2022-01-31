@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <title>TOP JS Fundamentals pt. 3 - practice</title>
+</head>
+<body>
+    <h6>check console</h6>
+</body>
+<script>
+    console.log('hello, world!');
+    function add7(num) {
+        return num + 7;
+    }
+    function multiply(x, y) {
+        return x*y;
+    }
+    function capitalize(string) {
+        const lower = string.toLowerCase();
+        const capital = string[0].toUpperCase();
+        const newString = lower.replace(string[0], capital);
+
+        return newString;
+    }
+    function lastLetter(string) {
+        const lastLetter = string.slice(-1);
+        return lastLetter;
+    }
+</script>
